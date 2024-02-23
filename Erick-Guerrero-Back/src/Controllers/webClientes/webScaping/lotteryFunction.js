@@ -780,7 +780,7 @@ async function newYorkNoche() {
   while (retries < maxRetries) {
     try {
       const today = new Date();
-      today.setHours(today.getHours() - 6);
+      today.setHours(today.getHours() - 3);
 
       const startOfDay = new Date(today);
 startOfDay.setHours(0, 0, 0, 0); // Establecer la hora a las 00:00:00
