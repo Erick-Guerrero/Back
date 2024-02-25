@@ -93,9 +93,9 @@ const cronTasks = [
 
   { pattern: '40 23 * * *',nombre:"control", func: anguilla },
 
-  { pattern: '30 0 * * *',nombre:"newYorkNoche", func: newYorkNoche },
+  { pattern: '0 1 * * *',nombre:"newYorkNoche", func: newYorkNoche },
 
-  { pattern: '30 0 * * *',nombre:"control", func: newYorkNoche },
+  { pattern: '30 1 * * *',nombre:"control", func: newYorkNoche },
 
   { pattern: '55 23 * * *',nombre:"floridaNoche", func: floridaNoche },
 
