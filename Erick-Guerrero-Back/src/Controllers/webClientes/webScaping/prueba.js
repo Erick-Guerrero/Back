@@ -3,7 +3,7 @@ const puppeteer = require("puppeteer");
 // const { Op } = require("sequelize");
 
 
-async function laSuerteDominicana6() {
+async function laPrimeraDia() {
   const maxRetries = 3;
   let retryCount = 0;
   const today = new Date();
@@ -20,24 +20,17 @@ startOfDay.setHours(0, 0, 0, 0); // Establecer la hora a las 00:00:00
 const endOfDay = new Date(today);
 endOfDay.setHours(23, 59, 59, 999); 
 
-//       const numberAlready = await Numbers.findOne({
-//         where: {
-//           nameLottery: "La Suerte Dominicana",
-//           hr: "18:00",
-// day:{
-//             [Op.between]: [startOfDay, endOfDay],
-// }
-//         },
-//       });
+      const numberAlready = await Numbers.findOne({
+        where: {
+          nameLottery: "La Primera Día",
+          hr: "12:00",
+day:{
+            [Op.between]: [startOfDay, endOfDay],
+}
+        },
+      });
 
-//       if (numberAlready) return "Ok";
-
-      // const dayOfWeek = today.getDay();
-
-      // if (dayOfWeek === 0) {
-      //   console.log("Hoy es domingo, la función no se ejecutará.");
-      //   return;
-      // }
+      if (numberAlready) return "Ok";
 
       browser = await puppeteer.launch({
         headless: "new",
@@ -61,26 +54,25 @@ endOfDay.setHours(23, 59, 59, 999);
         return numbers;
       });
 
-      if (numbersData.length > 0 && numbersData[1].length === 3) {
-        const numbers = numbersData[1];
+      if (numbersData.length > 0 && numbersData[0].length === 3) {
+        const numbers = numbersData[0];
 
         // Verificar si el número es "00" y ajustar el valor
         const adjustedNumbers = numbers.map((num) =>
           num === "00" ? "100" : num
         );
 
-        console.log(numbers);
-
-      //   await Numbers.create({
-      //     number1: adjustedNumbers[0],
-      //     number2: adjustedNumbers[1],
-      //     number3: adjustedNumbers[2],
-      //     page: "https://www.conectate.com.do/loterias/la-primera",
-      //     nameLottery: "La Suerte Dominicana",
-      //     hr: "18:00",
-      //     imageUrl: "https://enloteria.com/assets/la_suerte-503a3d9314a080d132a414fdc5a6940ddd50ef1d235dcc621bc1bc7f7516fbb1.svg",
-      //     day: today,
-      //   });
+        await Numbers.create({
+          number1: adjustedNumbers[0],
+          number2: adjustedNumbers[1],
+          number3: adjustedNumbers[2],
+          page: "https://www.conectate.com.do/loterias/la-primera",
+          nameLottery: "La Primera Día",
+          hr: "12:00",
+          imageUrl:
+            "https://laprimera.do/wp-content/uploads/2023/07/logo-la-primera.svg",
+          day: today,
+        });
       } else {
         console.log("No se encontraron números válidos en la página.");
       }
@@ -102,5 +94,3 @@ endOfDay.setHours(23, 59, 59, 999);
     }
   }
 }
-
-laSuerteDominicana6()
