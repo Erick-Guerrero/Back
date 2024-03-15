@@ -16,9 +16,12 @@ module.exports = async (req, res) => {
     },
   });
 
-  if (!client) {
+
+
+  if (!client || client.length === 0) {
+    const respuesta1 = 'Cliente no encontrado'
     // Si el cliente no existe, enviar una respuesta indicando que el cliente no fue encontrado
-    return response(res, 404, { message: "Cliente no encontrado" });
+    return response(res, 200, respuesta1);
   }
 
   // Buscar tickets del cliente para la fecha actual
@@ -36,8 +39,9 @@ module.exports = async (req, res) => {
   });
 
   if (!tickets || tickets.length === 0) {
+    const respuesta2 = "No se encontraron tickets para el cliente"
     // Si el cliente no tiene tickets para la fecha actual, enviar una respuesta indicando que no hay tickets
-    return response(res, 404, { message: "No se encontraron tickets para el cliente" });
+    return response(res, 200, respuesta2);
   }
 
   response(res, 200, tickets);
