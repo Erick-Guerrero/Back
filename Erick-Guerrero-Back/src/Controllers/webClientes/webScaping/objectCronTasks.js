@@ -17,7 +17,7 @@ const cronTasks = [
 
   { pattern: '40 13 * * *',nombre:"control", func: laPrimeraDia },
 
-  { pattern: '40 13 * * *',nombre:"laSuerteDominicanaMD", func: laSuerteDominicanaMD },
+  { pattern: '35 13 * * *',nombre:"laSuerteDominicanaMD", func: laSuerteDominicanaMD },
 
   { pattern: '30 14 * * *',nombre:"control", func: laSuerteDominicanaMD },
 
