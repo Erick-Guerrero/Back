@@ -25,15 +25,15 @@ const cronTasks = [
 
   { pattern: '40 14 * * *',nombre:"control", func: real1300 },
 
-  { pattern: '1 15 * * *',nombre:"lotedom1355", func: lotedom1355 },
+  { pattern: '0 15 * * *',nombre:"lotedom1355", func: lotedom1355 },
 
   { pattern: '40 15 * * *',nombre:"control", func: lotedom1355 },
 
-  { pattern: '40 15 * * *',nombre:"floridaTarde", func: floridaTarde },
+  { pattern: '35 15 * * *',nombre:"floridaTarde", func: floridaTarde },
 
   { pattern: '30 16 * * *',nombre:"control", func: floridaTarde },
 
-  { pattern: '41 15 * * *',nombre:"ganaMas", func: ganaMas },
+  { pattern: '35 15 * * *',nombre:"ganaMas", func: ganaMas },
 
   { pattern: '30 16 * * *',nombre:"control", func: ganaMas },
 
@@ -61,11 +61,11 @@ const cronTasks = [
 
   { pattern: '30 19 * * *',nombre:"control", func: nacionalDom6 },
 
-  { pattern: '16 19 * * *',nombre:"anguilla", func: anguilla },
+  { pattern: '5 19 * * *',nombre:"anguilla", func: anguilla },
 
   { pattern: '40 19 * * *',nombre:"control", func: anguilla },
 
-  { pattern: '7 19 * * *',nombre:"laSuerteDominicana6", func: laSuerteDominicana6 },
+  { pattern: '5 19 * * *',nombre:"laSuerteDominicana6", func: laSuerteDominicana6 },
 
   { pattern: '40 19 * * *',nombre:"control", func: laSuerteDominicana6 },
 
@@ -81,11 +81,11 @@ const cronTasks = [
 
   { pattern: '40 21 * * *',nombre:"control", func: laPrimeraNoche },
 
-  { pattern: '1 22 * * *',nombre:"leidsaLS2055", func: leidsaLS2055 },
+  { pattern: '0 22 * * *',nombre:"leidsaLS2055", func: leidsaLS2055 },
 
   { pattern: '40 22 * * *',nombre:"control", func: leidsaLS2055 },
 
-  { pattern: '6 22 * * *',nombre:"nacionalLS21", func: nacionalLS21 },
+  { pattern: '5 22 * * *',nombre:"nacionalLS21", func: nacionalLS21 },
 
   { pattern: '40 22 * * *',nombre:"control", func: nacionalLS21 },
 
@@ -97,7 +97,7 @@ const cronTasks = [
 
   { pattern: '30 1 * * *',nombre:"control", func: newYorkNoche },
 
-  { pattern: '45 23 * * *',nombre:"floridaNoche", func: floridaNoche },
+  { pattern: '50 23 * * *',nombre:"floridaNoche", func: floridaNoche },
 
   { pattern: '30 0 * * *',nombre:"control", func: floridaNoche },
 
