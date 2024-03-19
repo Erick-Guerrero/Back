@@ -37,6 +37,8 @@ module.exports = async (req, res) => {
     },
     include: [{ model: TicketNumber }],
   });
+  
+  console.log(tickets);
 
   if (!tickets || tickets.length === 0) {
     const respuesta2 = "No se encontraron tickets para el cliente"
