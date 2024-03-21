@@ -43,7 +43,6 @@ module.exports = (sequelize) => {
       },
       hrLotteryClient: {
         type: DataTypes.STRING,
-        allowNull: false,
       },
     },
     {

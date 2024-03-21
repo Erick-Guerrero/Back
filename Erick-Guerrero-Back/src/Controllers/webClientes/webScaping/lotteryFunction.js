@@ -286,6 +286,843 @@ endOfDay.setHours(23, 59, 59, 999);
   }
 }
 
+async function anguilla9() {
+  let browser;
+  let page;
+
+  try {
+    const today = new Date();
+    today.setHours(today.getHours() - 4);
+
+    const startOfDay = new Date(today);
+startOfDay.setHours(0, 0, 0, 0); // Establecer la hora a las 00:00:00
+
+const endOfDay = new Date(today);
+endOfDay.setHours(23, 59, 59, 999);
+
+    const numberAlready = await Numbers.findOne({
+      where: {
+        nameLottery: "Anguilla",
+        hr: "09:00",
+        day:{
+            [Op.between]: [startOfDay, endOfDay],
+}
+      },
+    });
+
+    if (numberAlready) return "Ok";
+
+    browser = await puppeteer.launch({
+      headless: "new",
+      args: ["--no-sandbox"],
+    });
+
+    page = await browser.newPage();
+
+    const url = "https://anguillalottery.ai/es/";
+    await page.goto(url, { waitUntil: "domcontentloaded" });
+    await page.waitForSelector(".bolas-sorteo", { timeout: 150000 }); // Espera 60 segundos en lugar de 30.
+
+    const numbersData = await page.evaluate(() => {
+      const divResultados = Array.from(
+        document.querySelectorAll(".bolas-sorteo")
+      );
+
+      const data = divResultados.map((div) => {
+        const numeros = Array.from(div.querySelectorAll(".numero")).map(
+          (span) => {
+            const textoCompleto = span.textContent.trim();
+            const numero = textoCompleto.replace(/^\D+/g, ""); // Extraer los números del texto
+            return numero;
+          }
+        );
+        return numeros;
+      });
+
+      return data;
+    });
+
+    if (numbersData.length > 0 && numbersData[0].length === 3) {
+      const numbers = numbersData[0];
+
+      // Verificar si el número es "00" y ajustar el valor
+      const adjustedNumbers = numbers.map((num) =>
+        num === "00" ? "100" : num
+      );
+
+      await Numbers.create({
+        number1: adjustedNumbers[0],
+        number2: adjustedNumbers[1],
+        number3: adjustedNumbers[2],
+        page: "https://anguillalottery.ai/es/",
+        nameLottery: "Anguilla",
+        hr: "09:00",
+        imageUrl:
+          "https://anguillalottery.ai/wp-content/themes/madroka/images/logofooter.png",
+        day: today,
+      });
+    } else {
+      console.log("No se encontraron números válidos en la página.");
+    }
+  } catch (error) {
+    console.error(
+      "Se produjo un error al ejecutar la función anguilla:",
+      error
+    );
+  } finally {
+    if (page) {
+      await page.close();
+    }
+    if (browser) {
+      await browser.close();
+    }
+  }
+}
+
+async function anguilla10() {
+  let browser;
+  let page;
+
+  try {
+    const today = new Date();
+    today.setHours(today.getHours() - 4);
+
+    const startOfDay = new Date(today);
+startOfDay.setHours(0, 0, 0, 0); // Establecer la hora a las 00:00:00
+
+const endOfDay = new Date(today);
+endOfDay.setHours(23, 59, 59, 999);
+
+    const numberAlready = await Numbers.findOne({
+      where: {
+        nameLottery: "Anguilla",
+        hr: "10:00",
+        day:{
+            [Op.between]: [startOfDay, endOfDay],
+}
+      },
+    });
+
+    if (numberAlready) return "Ok";
+
+    browser = await puppeteer.launch({
+      headless: "new",
+      args: ["--no-sandbox"],
+    });
+
+    page = await browser.newPage();
+
+    const url = "https://anguillalottery.ai/es/";
+    await page.goto(url, { waitUntil: "domcontentloaded" });
+    await page.waitForSelector(".bolas-sorteo", { timeout: 150000 }); // Espera 60 segundos en lugar de 30.
+
+    const numbersData = await page.evaluate(() => {
+      const divResultados = Array.from(
+        document.querySelectorAll(".bolas-sorteo")
+      );
+
+      const data = divResultados.map((div) => {
+        const numeros = Array.from(div.querySelectorAll(".numero")).map(
+          (span) => {
+            const textoCompleto = span.textContent.trim();
+            const numero = textoCompleto.replace(/^\D+/g, ""); // Extraer los números del texto
+            return numero;
+          }
+        );
+        return numeros;
+      });
+
+      return data;
+    });
+
+    if (numbersData.length > 0 && numbersData[0].length === 3) {
+      const numbers = numbersData[0];
+
+      // Verificar si el número es "00" y ajustar el valor
+      const adjustedNumbers = numbers.map((num) =>
+        num === "00" ? "100" : num
+      );
+
+      await Numbers.create({
+        number1: adjustedNumbers[0],
+        number2: adjustedNumbers[1],
+        number3: adjustedNumbers[2],
+        page: "https://anguillalottery.ai/es/",
+        nameLottery: "Anguilla",
+        hr: "10:00",
+        imageUrl:
+          "https://anguillalottery.ai/wp-content/themes/madroka/images/logofooter.png",
+        day: today,
+      });
+    } else {
+      console.log("No se encontraron números válidos en la página.");
+    }
+  } catch (error) {
+    console.error(
+      "Se produjo un error al ejecutar la función anguilla:",
+      error
+    );
+  } finally {
+    if (page) {
+      await page.close();
+    }
+    if (browser) {
+      await browser.close();
+    }
+  }
+}
+
+async function anguilla11() {
+  let browser;
+  let page;
+
+  try {
+    const today = new Date();
+    today.setHours(today.getHours() - 4);
+
+    const startOfDay = new Date(today);
+startOfDay.setHours(0, 0, 0, 0); // Establecer la hora a las 00:00:00
+
+const endOfDay = new Date(today);
+endOfDay.setHours(23, 59, 59, 999);
+
+    const numberAlready = await Numbers.findOne({
+      where: {
+        nameLottery: "Anguilla",
+        hr: "11:00",
+        day:{
+            [Op.between]: [startOfDay, endOfDay],
+}
+      },
+    });
+
+    if (numberAlready) return "Ok";
+
+    browser = await puppeteer.launch({
+      headless: "new",
+      args: ["--no-sandbox"],
+    });
+
+    page = await browser.newPage();
+
+    const url = "https://anguillalottery.ai/es/";
+    await page.goto(url, { waitUntil: "domcontentloaded" });
+    await page.waitForSelector(".bolas-sorteo", { timeout: 150000 }); // Espera 60 segundos en lugar de 30.
+
+    const numbersData = await page.evaluate(() => {
+      const divResultados = Array.from(
+        document.querySelectorAll(".bolas-sorteo")
+      );
+
+      const data = divResultados.map((div) => {
+        const numeros = Array.from(div.querySelectorAll(".numero")).map(
+          (span) => {
+            const textoCompleto = span.textContent.trim();
+            const numero = textoCompleto.replace(/^\D+/g, ""); // Extraer los números del texto
+            return numero;
+          }
+        );
+        return numeros;
+      });
+
+      return data;
+    });
+
+    if (numbersData.length > 0 && numbersData[0].length === 3) {
+      const numbers = numbersData[0];
+
+      // Verificar si el número es "00" y ajustar el valor
+      const adjustedNumbers = numbers.map((num) =>
+        num === "00" ? "100" : num
+      );
+
+      await Numbers.create({
+        number1: adjustedNumbers[0],
+        number2: adjustedNumbers[1],
+        number3: adjustedNumbers[2],
+        page: "https://anguillalottery.ai/es/",
+        nameLottery: "Anguilla",
+        hr: "11:00",
+        imageUrl:
+          "https://anguillalottery.ai/wp-content/themes/madroka/images/logofooter.png",
+        day: today,
+      });
+    } else {
+      console.log("No se encontraron números válidos en la página.");
+    }
+  } catch (error) {
+    console.error(
+      "Se produjo un error al ejecutar la función anguilla:",
+      error
+    );
+  } finally {
+    if (page) {
+      await page.close();
+    }
+    if (browser) {
+      await browser.close();
+    }
+  }
+}
+
+async function anguilla15() {
+  let browser;
+  let page;
+
+  try {
+    const today = new Date();
+    today.setHours(today.getHours() - 4);
+
+    const startOfDay = new Date(today);
+startOfDay.setHours(0, 0, 0, 0); // Establecer la hora a las 00:00:00
+
+const endOfDay = new Date(today);
+endOfDay.setHours(23, 59, 59, 999);
+
+    const numberAlready = await Numbers.findOne({
+      where: {
+        nameLottery: "Anguilla",
+        hr: "15:00",
+        day:{
+            [Op.between]: [startOfDay, endOfDay],
+}
+      },
+    });
+
+    if (numberAlready) return "Ok";
+
+    browser = await puppeteer.launch({
+      headless: "new",
+      args: ["--no-sandbox"],
+    });
+
+    page = await browser.newPage();
+
+    const url = "https://anguillalottery.ai/es/";
+    await page.goto(url, { waitUntil: "domcontentloaded" });
+    await page.waitForSelector(".bolas-sorteo", { timeout: 150000 }); // Espera 60 segundos en lugar de 30.
+
+    const numbersData = await page.evaluate(() => {
+      const divResultados = Array.from(
+        document.querySelectorAll(".bolas-sorteo")
+      );
+
+      const data = divResultados.map((div) => {
+        const numeros = Array.from(div.querySelectorAll(".numero")).map(
+          (span) => {
+            const textoCompleto = span.textContent.trim();
+            const numero = textoCompleto.replace(/^\D+/g, ""); // Extraer los números del texto
+            return numero;
+          }
+        );
+        return numeros;
+      });
+
+      return data;
+    });
+
+    if (numbersData.length > 0 && numbersData[0].length === 3) {
+      const numbers = numbersData[0];
+
+      // Verificar si el número es "00" y ajustar el valor
+      const adjustedNumbers = numbers.map((num) =>
+        num === "00" ? "100" : num
+      );
+
+      await Numbers.create({
+        number1: adjustedNumbers[0],
+        number2: adjustedNumbers[1],
+        number3: adjustedNumbers[2],
+        page: "https://anguillalottery.ai/es/",
+        nameLottery: "Anguilla",
+        hr: "15:00",
+        imageUrl:
+          "https://anguillalottery.ai/wp-content/themes/madroka/images/logofooter.png",
+        day: today,
+      });
+    } else {
+      console.log("No se encontraron números válidos en la página.");
+    }
+  } catch (error) {
+    console.error(
+      "Se produjo un error al ejecutar la función anguilla:",
+      error
+    );
+  } finally {
+    if (page) {
+      await page.close();
+    }
+    if (browser) {
+      await browser.close();
+    }
+  }
+}
+
+async function anguilla16() {
+  let browser;
+  let page;
+
+  try {
+    const today = new Date();
+    today.setHours(today.getHours() - 4);
+
+    const startOfDay = new Date(today);
+startOfDay.setHours(0, 0, 0, 0); // Establecer la hora a las 00:00:00
+
+const endOfDay = new Date(today);
+endOfDay.setHours(23, 59, 59, 999);
+
+    const numberAlready = await Numbers.findOne({
+      where: {
+        nameLottery: "Anguilla",
+        hr: "16:00",
+        day:{
+            [Op.between]: [startOfDay, endOfDay],
+}
+      },
+    });
+
+    if (numberAlready) return "Ok";
+
+    browser = await puppeteer.launch({
+      headless: "new",
+      args: ["--no-sandbox"],
+    });
+
+    page = await browser.newPage();
+
+    const url = "https://anguillalottery.ai/es/";
+    await page.goto(url, { waitUntil: "domcontentloaded" });
+    await page.waitForSelector(".bolas-sorteo", { timeout: 150000 }); // Espera 60 segundos en lugar de 30.
+
+    const numbersData = await page.evaluate(() => {
+      const divResultados = Array.from(
+        document.querySelectorAll(".bolas-sorteo")
+      );
+
+      const data = divResultados.map((div) => {
+        const numeros = Array.from(div.querySelectorAll(".numero")).map(
+          (span) => {
+            const textoCompleto = span.textContent.trim();
+            const numero = textoCompleto.replace(/^\D+/g, ""); // Extraer los números del texto
+            return numero;
+          }
+        );
+        return numeros;
+      });
+
+      return data;
+    });
+
+    if (numbersData.length > 0 && numbersData[0].length === 3) {
+      const numbers = numbersData[0];
+
+      // Verificar si el número es "00" y ajustar el valor
+      const adjustedNumbers = numbers.map((num) =>
+        num === "00" ? "100" : num
+      );
+
+      await Numbers.create({
+        number1: adjustedNumbers[0],
+        number2: adjustedNumbers[1],
+        number3: adjustedNumbers[2],
+        page: "https://anguillalottery.ai/es/",
+        nameLottery: "Anguilla",
+        hr: "16:00",
+        imageUrl:
+          "https://anguillalottery.ai/wp-content/themes/madroka/images/logofooter.png",
+        day: today,
+      });
+    } else {
+      console.log("No se encontraron números válidos en la página.");
+    }
+  } catch (error) {
+    console.error(
+      "Se produjo un error al ejecutar la función anguilla:",
+      error
+    );
+  } finally {
+    if (page) {
+      await page.close();
+    }
+    if (browser) {
+      await browser.close();
+    }
+  }
+}
+
+async function anguilla17() {
+  let browser;
+  let page;
+
+  try {
+    const today = new Date();
+    today.setHours(today.getHours() - 4);
+
+    const startOfDay = new Date(today);
+startOfDay.setHours(0, 0, 0, 0); // Establecer la hora a las 00:00:00
+
+const endOfDay = new Date(today);
+endOfDay.setHours(23, 59, 59, 999);
+
+    const numberAlready = await Numbers.findOne({
+      where: {
+        nameLottery: "Anguilla",
+        hr: "17:00",
+        day:{
+            [Op.between]: [startOfDay, endOfDay],
+}
+      },
+    });
+
+    if (numberAlready) return "Ok";
+
+    browser = await puppeteer.launch({
+      headless: "new",
+      args: ["--no-sandbox"],
+    });
+
+    page = await browser.newPage();
+
+    const url = "https://anguillalottery.ai/es/";
+    await page.goto(url, { waitUntil: "domcontentloaded" });
+    await page.waitForSelector(".bolas-sorteo", { timeout: 150000 }); // Espera 60 segundos en lugar de 30.
+
+    const numbersData = await page.evaluate(() => {
+      const divResultados = Array.from(
+        document.querySelectorAll(".bolas-sorteo")
+      );
+
+      const data = divResultados.map((div) => {
+        const numeros = Array.from(div.querySelectorAll(".numero")).map(
+          (span) => {
+            const textoCompleto = span.textContent.trim();
+            const numero = textoCompleto.replace(/^\D+/g, ""); // Extraer los números del texto
+            return numero;
+          }
+        );
+        return numeros;
+      });
+
+      return data;
+    });
+
+    if (numbersData.length > 0 && numbersData[0].length === 3) {
+      const numbers = numbersData[0];
+
+      // Verificar si el número es "00" y ajustar el valor
+      const adjustedNumbers = numbers.map((num) =>
+        num === "00" ? "100" : num
+      );
+
+      await Numbers.create({
+        number1: adjustedNumbers[0],
+        number2: adjustedNumbers[1],
+        number3: adjustedNumbers[2],
+        page: "https://anguillalottery.ai/es/",
+        nameLottery: "Anguilla",
+        hr: "17:00",
+        imageUrl:
+          "https://anguillalottery.ai/wp-content/themes/madroka/images/logofooter.png",
+        day: today,
+      });
+    } else {
+      console.log("No se encontraron números válidos en la página.");
+    }
+  } catch (error) {
+    console.error(
+      "Se produjo un error al ejecutar la función anguilla:",
+      error
+    );
+  } finally {
+    if (page) {
+      await page.close();
+    }
+    if (browser) {
+      await browser.close();
+    }
+  }
+}
+
+async function anguilla18() {
+  let browser;
+  let page;
+
+  try {
+    const today = new Date();
+    today.setHours(today.getHours() - 4);
+
+    const startOfDay = new Date(today);
+startOfDay.setHours(0, 0, 0, 0); // Establecer la hora a las 00:00:00
+
+const endOfDay = new Date(today);
+endOfDay.setHours(23, 59, 59, 999);
+
+    const numberAlready = await Numbers.findOne({
+      where: {
+        nameLottery: "Anguilla",
+        hr: "18:00",
+        day:{
+            [Op.between]: [startOfDay, endOfDay],
+}
+      },
+    });
+
+    if (numberAlready) return "Ok";
+
+    browser = await puppeteer.launch({
+      headless: "new",
+      args: ["--no-sandbox"],
+    });
+
+    page = await browser.newPage();
+
+    const url = "https://anguillalottery.ai/es/";
+    await page.goto(url, { waitUntil: "domcontentloaded" });
+    await page.waitForSelector(".bolas-sorteo", { timeout: 150000 }); // Espera 60 segundos en lugar de 30.
+
+    const numbersData = await page.evaluate(() => {
+      const divResultados = Array.from(
+        document.querySelectorAll(".bolas-sorteo")
+      );
+
+      const data = divResultados.map((div) => {
+        const numeros = Array.from(div.querySelectorAll(".numero")).map(
+          (span) => {
+            const textoCompleto = span.textContent.trim();
+            const numero = textoCompleto.replace(/^\D+/g, ""); // Extraer los números del texto
+            return numero;
+          }
+        );
+        return numeros;
+      });
+
+      return data;
+    });
+
+    if (numbersData.length > 0 && numbersData[0].length === 3) {
+      const numbers = numbersData[0];
+
+      // Verificar si el número es "00" y ajustar el valor
+      const adjustedNumbers = numbers.map((num) =>
+        num === "00" ? "100" : num
+      );
+
+      await Numbers.create({
+        number1: adjustedNumbers[0],
+        number2: adjustedNumbers[1],
+        number3: adjustedNumbers[2],
+        page: "https://anguillalottery.ai/es/",
+        nameLottery: "Anguilla",
+        hr: "18:00",
+        imageUrl:
+          "https://anguillalottery.ai/wp-content/themes/madroka/images/logofooter.png",
+        day: today,
+      });
+    } else {
+      console.log("No se encontraron números válidos en la página.");
+    }
+  } catch (error) {
+    console.error(
+      "Se produjo un error al ejecutar la función anguilla:",
+      error
+    );
+  } finally {
+    if (page) {
+      await page.close();
+    }
+    if (browser) {
+      await browser.close();
+    }
+  }
+}
+
+async function anguilla19() {
+  let browser;
+  let page;
+
+  try {
+    const today = new Date();
+    today.setHours(today.getHours() - 4);
+
+    const startOfDay = new Date(today);
+startOfDay.setHours(0, 0, 0, 0); // Establecer la hora a las 00:00:00
+
+const endOfDay = new Date(today);
+endOfDay.setHours(23, 59, 59, 999);
+
+    const numberAlready = await Numbers.findOne({
+      where: {
+        nameLottery: "Anguilla",
+        hr: "19:00",
+        day:{
+            [Op.between]: [startOfDay, endOfDay],
+}
+      },
+    });
+
+    if (numberAlready) return "Ok";
+
+    browser = await puppeteer.launch({
+      headless: "new",
+      args: ["--no-sandbox"],
+    });
+
+    page = await browser.newPage();
+
+    const url = "https://anguillalottery.ai/es/";
+    await page.goto(url, { waitUntil: "domcontentloaded" });
+    await page.waitForSelector(".bolas-sorteo", { timeout: 150000 }); // Espera 60 segundos en lugar de 30.
+
+    const numbersData = await page.evaluate(() => {
+      const divResultados = Array.from(
+        document.querySelectorAll(".bolas-sorteo")
+      );
+
+      const data = divResultados.map((div) => {
+        const numeros = Array.from(div.querySelectorAll(".numero")).map(
+          (span) => {
+            const textoCompleto = span.textContent.trim();
+            const numero = textoCompleto.replace(/^\D+/g, ""); // Extraer los números del texto
+            return numero;
+          }
+        );
+        return numeros;
+      });
+
+      return data;
+    });
+
+    if (numbersData.length > 0 && numbersData[0].length === 3) {
+      const numbers = numbersData[0];
+
+      // Verificar si el número es "00" y ajustar el valor
+      const adjustedNumbers = numbers.map((num) =>
+        num === "00" ? "100" : num
+      );
+
+      await Numbers.create({
+        number1: adjustedNumbers[0],
+        number2: adjustedNumbers[1],
+        number3: adjustedNumbers[2],
+        page: "https://anguillalottery.ai/es/",
+        nameLottery: "Anguilla",
+        hr: "19:00",
+        imageUrl:
+          "https://anguillalottery.ai/wp-content/themes/madroka/images/logofooter.png",
+        day: today,
+      });
+    } else {
+      console.log("No se encontraron números válidos en la página.");
+    }
+  } catch (error) {
+    console.error(
+      "Se produjo un error al ejecutar la función anguilla:",
+      error
+    );
+  } finally {
+    if (page) {
+      await page.close();
+    }
+    if (browser) {
+      await browser.close();
+    }
+  }
+}
+
+async function anguilla22() {
+  let browser;
+  let page;
+
+  try {
+    const today = new Date();
+    today.setHours(today.getHours() - 4);
+
+    const startOfDay = new Date(today);
+startOfDay.setHours(0, 0, 0, 0); // Establecer la hora a las 00:00:00
+
+const endOfDay = new Date(today);
+endOfDay.setHours(23, 59, 59, 999);
+
+    const numberAlready = await Numbers.findOne({
+      where: {
+        nameLottery: "Anguilla",
+        hr: "22:00",
+        day:{
+            [Op.between]: [startOfDay, endOfDay],
+}
+      },
+    });
+
+    if (numberAlready) return "Ok";
+
+    browser = await puppeteer.launch({
+      headless: "new",
+      args: ["--no-sandbox"],
+    });
+
+    page = await browser.newPage();
+
+    const url = "https://anguillalottery.ai/es/";
+    await page.goto(url, { waitUntil: "domcontentloaded" });
+    await page.waitForSelector(".bolas-sorteo", { timeout: 150000 }); // Espera 60 segundos en lugar de 30.
+
+    const numbersData = await page.evaluate(() => {
+      const divResultados = Array.from(
+        document.querySelectorAll(".bolas-sorteo")
+      );
+
+      const data = divResultados.map((div) => {
+        const numeros = Array.from(div.querySelectorAll(".numero")).map(
+          (span) => {
+            const textoCompleto = span.textContent.trim();
+            const numero = textoCompleto.replace(/^\D+/g, ""); // Extraer los números del texto
+            return numero;
+          }
+        );
+        return numeros;
+      });
+
+      return data;
+    });
+
+    if (numbersData.length > 0 && numbersData[0].length === 3) {
+      const numbers = numbersData[0];
+
+      // Verificar si el número es "00" y ajustar el valor
+      const adjustedNumbers = numbers.map((num) =>
+        num === "00" ? "100" : num
+      );
+
+      await Numbers.create({
+        number1: adjustedNumbers[0],
+        number2: adjustedNumbers[1],
+        number3: adjustedNumbers[2],
+        page: "https://anguillalottery.ai/es/",
+        nameLottery: "Anguilla",
+        hr: "22:00",
+        imageUrl:
+          "https://anguillalottery.ai/wp-content/themes/madroka/images/logofooter.png",
+        day: today,
+      });
+    } else {
+      console.log("No se encontraron números válidos en la página.");
+    }
+  } catch (error) {
+    console.error(
+      "Se produjo un error al ejecutar la función anguilla:",
+      error
+    );
+  } finally {
+    if (page) {
+      await page.close();
+    }
+    if (browser) {
+      await browser.close();
+    }
+  }
+}
+
 async function laPrimeraNoche() {
   const maxRetries = 3;
   let retryCount = 0;
@@ -1883,6 +2720,15 @@ module.exports = {
   leidsaLS2055,
   lotedom1355,
   anguilla,
+  anguilla9,
+  anguilla10,
+  anguilla11,
+  anguilla15,
+  anguilla16,
+  anguilla17,
+  anguilla18,
+  anguilla19,
+  anguilla22,
   laPrimeraDia,
   laPrimeraNoche,
   real1300,
