@@ -39,6 +39,7 @@ module.exports = async (req, res) => {
       lotteryName: lottery,
       lotteryHr: hr,
       total: totalTicket,
+      hrLotteryClient:hrLottery,
       validationCode: await validationCode(Tickets),
     });
 
