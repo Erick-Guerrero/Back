@@ -30,17 +30,17 @@ const {
 } = require("./lotteryFunction");
 
 const cronTasks = [
-  { pattern: "5 10 * * *", nombre: "anguilla9", func: anguilla9 },
+  { pattern: "8 10 * * *", nombre: "anguilla9", func: anguilla9 },
   { pattern: "10 10 * * *", nombre: "control", func: anguilla9 },
   { pattern: "20 10 * * *", nombre: "control", func: anguilla9 },
   { pattern: "30 10 * * *", nombre: "control", func: anguilla9 },
 
-  { pattern: "5 11 * * *", nombre: "anguilla", func: anguilla10 },
+  { pattern: "8 11 * * *", nombre: "anguilla", func: anguilla10 },
   { pattern: "10 11 * * *", nombre: "control", func: anguilla10 },
   { pattern: "20 11 * * *", nombre: "control", func: anguilla10 },
   { pattern: "30 11 * * *", nombre: "control", func: anguilla10 },
 
-  { pattern: "5 12 * * *", nombre: "anguilla", func: anguilla11 },
+  { pattern: "8 12 * * *", nombre: "anguilla", func: anguilla11 },
   { pattern: "10 12 * * *", nombre: "control", func: anguilla11 },
   { pattern: "20 12 * * *", nombre: "control", func: anguilla11 },
   { pattern: "30 12 * * *", nombre: "control", func: anguilla11 },
@@ -90,12 +90,12 @@ const cronTasks = [
   { pattern: "20 17 * * *", nombre: "control", func: leidsaDom1555 },
   { pattern: "30 17 * * *", nombre: "control", func: leidsaDom1555 },
 
-  { pattern: "5 17 * * *", nombre: "anguilla", func: anguilla16 },
+  { pattern: "8 17 * * *", nombre: "anguilla", func: anguilla16 },
   { pattern: "9 17 * * *", nombre: "control", func: anguilla16 },
   { pattern: "19 17 * * *", nombre: "control", func: anguilla16 },
   { pattern: "29 17 * * *", nombre: "control", func: anguilla16 },
 
-  { pattern: "5 18 * * *", nombre: "anguilla", func: anguilla17 },
+  { pattern: "8 18 * * *", nombre: "anguilla", func: anguilla17 },
   { pattern: "10 18 * * *", nombre: "control", func: anguilla17 },
   { pattern: "20 18 * * *", nombre: "control", func: anguilla17 },
   { pattern: "30 18 * * *", nombre: "control", func: anguilla17 },
@@ -105,7 +105,7 @@ const cronTasks = [
   { pattern: "20 19 * * *", nombre: "control", func: nacionalDom6 },
   { pattern: "30 19 * * *", nombre: "control", func: nacionalDom6 },
 
-  { pattern: "5 19 * * *", nombre: "anguilla", func: anguilla18 },
+  { pattern: "8 19 * * *", nombre: "anguilla", func: anguilla18 },
   { pattern: "10 19 * * *", nombre: "control", func: anguilla18 },
   { pattern: "20 19 * * *", nombre: "control", func: anguilla18 },
   { pattern: "30 19 * * *", nombre: "control", func: anguilla18 },
@@ -115,7 +115,7 @@ const cronTasks = [
   { pattern: "20 19 * * *", nombre: "control", func: laSuerteDominicana6 },
   { pattern: "30 19 * * *", nombre: "control", func: laSuerteDominicana6 },
 
-  { pattern: "5 20 * * *", nombre: "anguilla", func: anguilla19 },
+  { pattern: "8 20 * * *", nombre: "anguilla", func: anguilla19 },
   { pattern: "10 20 * * *", nombre: "control", func: anguilla19 },
   { pattern: "20 20 * * *", nombre: "control", func: anguilla19 },
   { pattern: "30 20 * * *", nombre: "control", func: anguilla19 },
@@ -140,7 +140,7 @@ const cronTasks = [
   { pattern: "19 22 * * *", nombre: "control", func: nacionalLS21 },
   { pattern: "29 22 * * *", nombre: "control", func: nacionalLS21 },
 
-  { pattern: "5 23 * * *", nombre: "anguilla", func: anguilla22 },
+  { pattern: "8 23 * * *", nombre: "anguilla", func: anguilla22 },
   { pattern: "10 23 * * *", nombre: "control", func: anguilla22 },
   { pattern: "20 23 * * *", nombre: "control", func: anguilla22 },
   { pattern: "30 23 * * *", nombre: "control", func: anguilla22 },
